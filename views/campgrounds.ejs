@@ -1,14 +1,20 @@
-<h1>will be Campgrounds!</h1>
+<% include partials/header %>
 
-<div>
-    <% campgrounds.forEach(function(campground){ %>
-        <div>
-            <h4>
-                <%= campground.name %>
-            </h4>
-            <img src="<%= campground.image %>">
-        </div>
-        <% }); %>
-</div>
+    <h1>will be Campgrounds!</h1>
 
-<a href="/">Home</a>
+    <a href="/campgrounds/new">Add New Campground</a>
+
+    <div>
+        <% campgrounds.forEach(function(campground){ %>
+            <div>
+                <h4>
+                    <%= campground.name %>
+                </h4>
+                <img src="<%= campground.image %>">
+            </div>
+            <% }); %>
+    </div>
+
+    <a href="/">Home</a>
+
+    <% include partials/footer %>
