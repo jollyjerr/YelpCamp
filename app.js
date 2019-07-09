@@ -6,7 +6,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 var campgrounds = [
-    { name: "Camp1", image: "https://live.staticflickr.com/3181/2745088502_582d1f061e_m.jpg" }, { name: "Camp2", image: "https://farm1.staticflickr.com/213/520557069_c2249a2689_b.jpg" }, { name: "Camp3", image: "https://farm3.staticflickr.com/2491/3892588497_a8c9c2ec2e_b.jpg" }
+    { name: "South Fork Campground", image: "https://www.fs.usda.gov/Internet/FSE_MEDIA/stelprd3841406.jpg" },
+    { name: "Circle Park Campground", image: "https://static1.squarespace.com/static/570cea31859fd01b8faced0c/t/5775c8452e69cff5b8fe568c/1467336807087/http%3A%2F%2Fwww.the-openroad.com+Big+Horn+National+Forest" },
+    { name: "Sitting Bull Campground", image: "https://res.cloudinary.com/miles-extranet-dev/image/upload/ar_16:9,c_fill,w_1200,g_face/Wyoming/account_photos/2031/31266-8464-34728.jpg" }
 ];
 
 app.get("/", function(req, res) {
