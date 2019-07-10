@@ -1,10 +1,34 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
+var express = require("express"),
+    app = express(),
+    bodyParser = require("body-parser"),
+    mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
+//SCHEMA SETUP
+var campgroundSchema = new mongoose.Schema({
+    name: String,
+    image: String
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
+
+//TESTS
+Campground.create({
+    name: "Circle Park Campground",
+    image: "https://static1.squarespace.com/static/570cea31859fd01b8faced0c/t/5775c8452e69cff5b8fe568c/1467336807087/http%3A%2F%2Fwww.the-openroad.com+Big+Horn+National+Forest"
+}, function(err, campground) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Newly created campground: ");
+        console.log(campground);
+    }
+});
+
+//ROUTES
 var campgrounds = [
     { name: "South Fork Campground", image: "http://4.bp.blogspot.com/-wCDfRat_Nlo/U-UGlxdwi9I/AAAAAAAABSE/qqFJIWleunQ/s1600/01.JPG" },
     { name: "Circle Park Campground", image: "https://static1.squarespace.com/static/570cea31859fd01b8faced0c/t/5775c8452e69cff5b8fe568c/1467336807087/http%3A%2F%2Fwww.the-openroad.com+Big+Horn+National+Forest" },
