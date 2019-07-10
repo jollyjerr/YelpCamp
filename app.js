@@ -6,9 +6,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 var campgrounds = [
-    { name: "South Fork Campground", image: "https://www.fs.usda.gov/Internet/FSE_MEDIA/stelprd3841406.jpg" },
+    { name: "South Fork Campground", image: "http://4.bp.blogspot.com/-wCDfRat_Nlo/U-UGlxdwi9I/AAAAAAAABSE/qqFJIWleunQ/s1600/01.JPG" },
     { name: "Circle Park Campground", image: "https://static1.squarespace.com/static/570cea31859fd01b8faced0c/t/5775c8452e69cff5b8fe568c/1467336807087/http%3A%2F%2Fwww.the-openroad.com+Big+Horn+National+Forest" },
-    { name: "Sitting Bull Campground", image: "https://res.cloudinary.com/miles-extranet-dev/image/upload/ar_16:9,c_fill,w_1200,g_face/Wyoming/account_photos/2031/31266-8464-34728.jpg" }
+    { name: "Sitting Bull Campground", image: "https://www.fs.usda.gov/Internet/FSE_MEDIA/stelprd3844268.jpg" }
 ];
 
 app.get("/", function(req, res) {
